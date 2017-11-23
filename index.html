@@ -1,0 +1,223 @@
+<% layout('../layout') -%>
+<% var landing = true;%>
+<main id="landing">
+    <section class="landing-slider">
+
+        <div class="landing-slider__wrap">
+            <%data.slider.forEach((slide, index) => {%>
+            <div class="landing-slider__slide" data-index="<%=index + 1%>">
+                <img src="<%=slide.img%>" alt="" class="landing-slider__img">
+            </div>
+            <%});%>
+        </div>
+
+        <div class="landing-slider__overblock overblock active">
+            <div class="overblock__header">Дизайн-проект</div>
+            <%data.slider.forEach((slide, index) => {%>
+            <div class="overblock__title <%=index === 0 ? 'active' : ''%>" data-index="<%=index + 1%>"><%=slide.title%></div>
+            <div class="overblock__name <%=index === 0 ? 'active' : ''%>" data-index="<%=index + 1%>"><%=slide.name%></div>
+            <%});%>
+            <div class="overblock__tracery">
+                <div class="stripe--gray"></div>
+                <div class="tracery__wrap">
+                    <div class="tracery--kvadrat"></div>
+                </div>
+                <div class="stripe--gray"></div>
+            </div>
+            <a href="#" class="overblock__button btn btn-yellow">Перейти к заказу дизайна</a>
+        </div>
+
+        <div class="landing-slider__mouse">
+            <%-partial('../svg/landing/mouse')%>
+            <div class="landing-slider__mouse-text">Подробнее</div>
+        </div>
+    </section>
+
+    <section class="landing-info">
+        <%data.blocks.forEach((block, index) => {%>
+        <div class="landing-info__row-parallax row-parallax container">
+            <div class="row-parallax__parallax-text parallax-text" data-scroll="500">
+                <div class="parallax-text__title"><%=block.title%></div>
+                <div class="parallax-text__p"><%=block.text%></div>
+            </div>
+            <div class="row-parallax__img" data-scroll="900">
+                <img src="/files/design-landing/block<%=index + 1%>.jpg" alt="Terra design project">
+            </div>
+            <div class="row-parallax__letter" data-scroll="1950"><%=block.letter%></div>
+        </div>
+        <%});%>
+    </section>
+
+    <section class="landing-advantages container">
+        <div class="landing-advantages__title">
+            Заказав бесплатный дизайн-проект у нас вы получаете:
+        </div>
+
+        <div class="landing-advantages__evolution">
+            <div class="landing-advantages__step step1">
+                <div class="landing-advantages__svg">
+                    <%- partial("../svg/landing/1") %>
+                    <div class="landing-advantages__step-arrow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="landing-advantages__step-text">
+                    Все планы дизайн - проекта и техническую документацию
+                </div>
+            </div>
+
+            <div class="landing-advantages__step step2">
+                <div class="landing-advantages__svg">
+                    <%- partial("../svg/landing/2") %>
+                    <div class="landing-advantages__step-arrow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="landing-advantages__step-text">
+                    3D проект со всеми видами вашего помещения
+                </div>
+            </div>
+
+            <div class="landing-advantages__step step3">
+                <div class="landing-advantages__svg">
+                    <%- partial("../svg/landing/3") %>
+                    <div class="landing-advantages__step-arrow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="landing-advantages__step-text">
+                    Раскладку плитки и мебели во всех проекциях
+                </div>
+            </div>
+
+            <div class="landing-advantages__step step4">
+                <div class="landing-advantages__svg">
+                    <%- partial("../svg/landing/4") %>
+                </div>
+                <div class="landing-advantages__step-text">
+                    Итоговую стоимость вашего проекта
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="landing-order design-order">
+        <div class="container landing-order__invite">
+            <div class="landing-order__title">
+                Закажите бесплатный дизайн-проект прямо сейчас!
+            </div>
+            <div class="landing-order__subTitle">
+                Заполните не большую форму, которая поможет дизайнеру создать подходящий дизайн-проект. Процедура не займет больше 3-х минут.
+            </div>
+            <div class="landing-order__select-data select-data">
+                <button class="select-data__button button-select btn btn-blue">
+                    <span>Выбрать производителя</span>
+                    <div class="button-select__options-wrap button-select__options--fabric">
+                        <%data.fabrics.forEach(fabric=>{%>
+                        <div class="button-select__options" data-link="<%=fabric.urlPart%>" data-value="<%=fabric._id%>"><%=fabric.name%></div>
+                        <%});%>
+                    </div>
+                </button>
+                <button class="select-data__button button-select btn btn-yellow button--disabled">
+                    <span>Выбрать коллекцию</span>
+                    <div class="button-select__options-wrap button-select__options--collection"></div>
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-wrapper terra-form">
+                <ul class="side-menu">
+                    <li class="active b" data-type="wc"><%-partial('../svg/interiors/bathroom')%>САНУЗЕЛ</li>
+                    <li class="" data-type="kitchen"><%-partial('../svg/interiors/bedroom')%>КУХНЯ</li>
+                    <li class="" data-type="living"><%-partial('../svg/interiors/livingRoom')%>ГОСТИНАЯ</li>
+                    <li class="" data-type="other"><%-partial('../svg/interiors/fasad')%>ДРУГОЕ</li>
+                </ul>
+                <div class="form-container">
+                    <button type="button" class="close">×</button>
+                    <form class="design_form" action="/design-order" method="POST" enctype="multipart/form-data">
+                        <%-partial('../design-project/form-room')%>
+                        <%-partial('../design-project/form-layout')%>
+                        <%-partial('../design-project/form-communication')%>
+                        <input type="hidden" class="-metrika-noform" name="session" value="<%-new Date().getTime() + Math.round(Math.random()*999999)%>">
+                        <input type="hidden" class="-metrika-noform" name="collectionLink" value="http://www.terracorp.ru<%=data.collectionLink%>">
+                        <div class="row button-block hidden-lg hidden-md">
+                            <div class="col-sm-6">
+                                <a href="/katalog" class="terra-btn-1">В каталог</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="submit" value="ЗАКАЗАТЬ" class="terra-btn-1 make-order" onclick="yaCounter597408.reachGoal('intBtnInteriorFinal'); return true;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="landing-order__select-data select-data select-data--order">
+                <a href="/katalog" class="select-data__button btn btn-red btn-opacity">
+                    Перейти в каталог
+                </a>
+                <input type="submit" value="ЗАКАЗАТЬ" class="select-data__button btn btn-red make-order">
+            </div>
+        </div>
+    </section>
+</main>
